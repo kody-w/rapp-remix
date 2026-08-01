@@ -80,7 +80,24 @@ cat ~/.brainstem/.brainstem_secret     # your key - never commit this
 Paste that into the player's Engine panel. It is stored in your own `localStorage` and
 sent to nobody but your own brainstem on your own machine.
 
-No brainstem? The player degrades to the recorded transcript and says so plainly.
+### The hosted page cannot reach your brainstem, and says so
+
+Measured, not assumed: from `https://kody-w.github.io/rapp-remix/` the browser blocks the
+call to `http://localhost:7071` as mixed content, so the page resolves to **Tier 2** and
+prints the reason. That is the pattern working, not failing.
+
+To actually run Tier 3, serve it over plain HTTP next to your engine:
+
+```bash
+git clone https://github.com/kody-w/rapp-remix && cd rapp-remix
+python3 -m http.server 8000
+open http://localhost:8000
+```
+
+Then paste your secret. `/health` is secret-guarded too, not only `/chat` — the brainstem
+treats any request carrying an `Origin` header as a foreign browser request, so without the
+secret it returns 403, which reads like *"engine is down"* when it means *"engine is there
+and does not know you."* The probe distinguishes the two.
 
 ---
 
