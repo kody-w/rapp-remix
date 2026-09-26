@@ -1,5 +1,9 @@
 # rapp-remix
 
+<!-- rapp1:network-header:start -->
+[![RAPP/1](https://kody-w.github.io/rapp-hive-public/portfolio/badges/rapp-remix.svg)](https://github.com/kody-w/rapp-hive-public/blob/main/portfolio/repos/rapp-remix.md) · **New to RAPP?** [Start here: get your Brainstem →](https://github.com/kody-w/rapp-installer#start-here)
+<!-- rapp1:network-header:end -->
+
 **One recording. Three fidelities. Pick the highest one your machine can afford.**
 
 A video is a recording you can only watch. A remix is a recording you can re-run.
